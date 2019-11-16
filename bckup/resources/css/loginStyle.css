@@ -1,0 +1,204 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+/*  */
+#container {
+    display: grid;
+    width: 300;
+    height: 400px;
+    grid-template-rows: 45px auto;
+}
+
+#navBar {
+    background-color: var(--mediumWhite);
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+    border: 1px solid var(--darkWhite);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto min-content auto;
+}
+
+#navBar span {
+    grid-row-start: 2;
+    font-family: RobotoExtraBold;
+    color: var(--lightBlack);
+}
+
+/*  */
+#body {
+    background-color: var(--white);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-right: 1px solid var(--darkWhite);
+    border-left: 1px solid var(--darkWhite);
+    border-bottom: 1px solid var(--darkWhite);
+    display: grid;
+    grid-template-rows: 15px min-content max-content auto;
+    grid-row-gap: 10px;
+}
+
+/*  */
+#logoContainer {
+    text-align: center;
+}
+
+#logoContainer img {
+    width: 64px;
+	user-select: none;
+    -webkit-user-drag: none;
+}
+
+/*  */
+#loginForm {
+    display: grid;
+    grid-template-rows: max-content max-content max-content;
+    grid-row-gap: 20px;
+}
+
+/*  */
+#userSwitch {
+    display: grid;
+    grid-template-columns: auto max-content max-content auto;
+    grid-column-gap: 15px;
+}
+
+.switches {
+    width: 75px;
+    height: 18px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 2px;
+    font-family: OpenSans;
+    font-size: 12px;
+    user-select: none;
+    transition: all 200ms ease-in-out;
+}
+
+#switchOn {
+    background-color: var(--darkGold);
+    color: var(--lightWhite);
+    font-style: normal;
+    text-shadow: 0px 0px 3px var(--lightWhite);
+    cursor: default;
+}
+
+#switchOff {
+    background-color: var(--mediumWhite);
+    color: var(--lightGray);
+    font-style: italic;
+    text-shadow: 0px 0px 3px var(--lightGray);
+    cursor: pointer;
+}
+
+/*  */
+#inputs {
+    width: 300px;
+    display: grid;
+    grid-template-columns: auto max-content auto;
+    grid-template-rows: 36px 36px;
+    grid-row-gap: 10px;
+    /* text-align: center; */
+}
+
+.inputs {
+    grid-column-start: 2;
+    display: grid;
+    grid-template-columns: 36px 185px 36px;
+    background-color: var(--lmWhite);
+    border-radius: 15.5px;
+}
+
+.valInputs {
+    height: 24px;
+    padding: 0px;
+    border: none;
+    margin-top: 6px;
+    background-color: transparent;
+    border-bottom: 1px solid var(--mediumWhite);
+    color: var(--darkGold);
+    font-family: Roboto;
+    text-shadow: 0px 0px 2px var(--darkGold);
+    outline: none;
+}
+
+.valInputs::placeholder {
+    color: var(--goldGray);
+    font-style: italic;
+}
+
+.inputsIcons {
+    margin: 6px;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#passShowHide {
+    width: 24px;
+    height: 24px;
+    /* background-color: var(--lightGold); */
+    background-image: url('../icons/show.png');
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/*  */
+#buttons {
+    display: grid;
+    grid-template-columns: auto max-content max-content auto;
+    grid-column-gap: 20px;
+}
+
+.operationBtns {
+    width: 85px;
+    height: 35px;
+    background-color: transparent;
+    border: 4px solid var(--darkGold);
+    color: var(--darkGold);
+    border-radius: 17.5px;
+    font-family: RobotoExtraBold;
+    font-size: 15px;
+    outline: none;
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
+}
+
+.operationBtns:active {
+    background-color: var(--darkGold);
+    border: none;
+    color: var(--white);
+    font-weight: bold;
+}
+
+/*  */
+/*  */
+/*  */
+.bgDecoration {
+    position: absolute;
+    /* border-radius: 50%; */
+    background-color: var(--lmWhite);
+    /* background-color: red; */
+}
+
+#bgd1 {
+    width: 90px;
+    height: 90px;
+    border-top-right-radius: 100%;
+    border-bottom-left-radius: 10px;
+    top: 309px;
+    left: 1px;
+}
+
+#bgd2 {
+    width: 50px;
+    height: 50px;
+    border-bottom-left-radius: 100%;
+    top: 45px;
+    left: 251px;
+}

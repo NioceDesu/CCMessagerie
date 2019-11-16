@@ -1,0 +1,108 @@
+.msgContainerLeft {
+    /* grid-column-start: 1; */
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 32px max-content max-content;
+    grid-column-gap: 8px;
+    margin-bottom: 10px;
+    -webkit-user-drag: none;
+}
+
+.imgContainerLeft {
+    background-color: var(--goldGray);
+    height: 32px;
+    border-radius: 50%;
+}
+
+.msgTextLeft,
+.dateMsgTextLeft {
+    height: fit-content;
+    border-radius: 7.5px;
+    padding: 7px;
+    font-family: Roboto;
+}
+
+.msgTextLeft {
+    background-color: var(--lmWhite);
+    max-width: 200px;
+    word-break: break-word;
+    color: var(--mediumBlack);
+    font-size: 14px;
+}
+
+.dateMsgTextLeft:hover {
+    background-color: var(--mediumWhite);
+}
+
+/*  */
+/*  */
+.dateMsgTextLeft,
+.dateMsgTextRight {
+    background-color: var(--lmWhite);
+    user-select: none;
+    cursor: pointer;
+    direction: rtl;
+    color: var(--mediumGray);
+    font-size: 13px;
+}
+
+.imgContainerLeft,
+.imgContainerRight {
+    background-position: cover;
+    background-size: cover;
+}
+
+/*  */
+/*  */
+
+.msgContainerRight {
+    /* width: fit-content; */
+    display: grid;
+    /* grid-template-columns: 32px max-content max-content; */
+    grid-template-columns: auto max-content max-content 32px;
+    grid-template-rows: max-content;
+    grid-column-gap: 8px;
+    margin-bottom: 10px;
+    -webkit-user-drag: none;
+}
+
+.imgContainerRight {
+    grid-column-start: 4;
+    grid-row-start: 1;
+    background-color: var(--darkGold);
+    height: 32px;
+    border-radius: 50%;
+}
+
+.msgTextRight,
+.dateMsgTextRight {
+    grid-row-start: 1;
+    height: fit-content;
+    border-radius: 7.5px;
+    padding: 7px;
+    font-family: Roboto;
+}
+
+.msgTextRight {
+    grid-column-start: 3;
+    background-color: var(--darkGold);
+    max-width: 200px;
+    word-break: break-word;
+    color: var(--lightBlack);
+    font-size: 14px;
+}
+
+.dateMsgTextRight {
+    grid-column-start: 2;
+}
+
+.dateMsgTextRight:hover {
+    background-color: var(--mediumWhite);
+}
+
+/*  */
+/*  */
+.msgTypeData {
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/loginStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/colors.css">
+    <script src="../js/controllers/loginWindow.js"></script>
+    <script src="../js/model/loginUser.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="navBar">
+            <span>LOGIN</span>
+        </div>
+        <div id="body">
+            <i></i>
+            <div id="logoContainer">
+                <img src="../logo/logo-dark.png" alt="Logo">
+            </div>
+            <div id="loginForm">
+                <div id="userSwitch">
+                    <i></i>
+                    <div id="switchOn" class="switches">
+                        <span>Comptable</span>
+                    </div>
+                    <div id="switchOff" class="switches">
+                        <span>Client</span>
+                    </div>
+                </div>
+                <div id="inputs">
+                    <div id="firstInput" class="inputs">
+                        <img src="../icons/login.png" alt="" class="inputsIcons">
+                        <input type="text" id="loginVal" class="valInputs" placeholder="Identfiant" />
+                    </div>
+                    <div id="secondInput" class="inputs">
+                        <img src="../icons/password.png" alt="" class="inputsIcons">
+                        <input type="password" id="passwordVal" class="valInputs" placeholder="Password" />
+                        <div class="inputsIcons" id="passShowHide"></div>
+                        <!-- <img src="../icons/show.png" alt="" class="inputsIcons"> -->
+                    </div>
+                </div>
+                <div id="buttons">
+                    <i></i>
+                    <input type="button" value="Login" id="btnLogin" class="operationBtns">
+                    <input type="button" value="Anuller" id="btnAnuller" class="operationBtns">
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <div class="bgDecoration" id="bgd1">
+        </div>
+        <div class="bgDecoration" id="bgd2">
+        </div>
+    </div>
+</body>
+
+</html>

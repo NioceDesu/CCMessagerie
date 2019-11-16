@@ -1,0 +1,94 @@
+@font-face {
+    font-family: Roboto;
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: RobotoExtraBold;
+    src: url('../fonts/Roboto-Black.ttf');
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url('../fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: OpenSansExtraBold;
+    src: url('../fonts/OpenSans-ExtraBold.ttf');
+}
+
+/*  */
+:root {
+    /* White Tones */
+    --pureWhite: #ffffff;
+    --white: #fafafa;
+    --lightWhite: #f7f7f7;
+    --lmWhite: #f5f5f5;
+    --mediumWhite: #f1f1f1;
+    --darkWhite: #dfdfdf;
+    --transparentDarkWhite: #fafafab6;
+    /* Gold Tones */
+    --lightGold: #FFDF00;
+    --mediumGold: #FFD700;
+    --darkGold: #decd6b;
+    /* Black Tones */
+    --lightBlack: #353432;
+    --mediumBlack: #292826;
+    --darkBlack: #181715;
+    --transparentDarkBlack: #181715b6;
+    /*  */
+    --lightGray: #b6b6b6;
+    --mediumGray: #979797;
+    --goldGray: #dfd9bb;
+    /* alerts */
+    --warning: rgba(255, 231, 93, 0.75);
+    --error: rgba(250, 70, 64, 0.75);
+    --succes: rgba(83, 235, 53, 0.75);
+}
+
+/*  */
+#alertBoxContainer {
+    position: absolute;
+    width: 300px;
+    height: 0px;
+    z-index: 99;
+    top: 45px;
+    left: 450px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    transition: all 1s ease-out;
+    display: grid;
+    grid-template-columns: 5px 18px max-content auto;
+    grid-template-rows: auto 18px auto;
+    grid-column-gap: 5px;
+}
+
+#alertBoxIcon {
+    grid-row-start: 2;
+    grid-column-start: 2;
+}
+
+#alertBoxText {
+    grid-row-start: 2;
+    grid-column-start: 3;
+    font-family: Roboto;
+    font-size: 14px;
+    color: var(--darkBlack);
+}
+
+/*  */
+::-webkit-scrollbar {
+    width: 8.5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--lmWhite);
+    border: 1px solid var(--mediumWhite);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--lightGray);
+}

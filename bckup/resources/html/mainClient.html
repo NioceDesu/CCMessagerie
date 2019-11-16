@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/styleClient.css">
+    <link rel="stylesheet" type="text/css" href="../css/chatStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/colors.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/controllers/clientWindow.js"></script>
+    <script src="../js/model/clientDB.js"></script>
+    <script src="../js/view/clientDisplay.js"></script>
+    <script src="../js/model/chatDB.js"></script>
+    <script src="../js/controllers/chatController.js"></script>
+    <script src="../js/view/chatDisplay.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="navBar">
+            <i></i>
+            <div id="windowTitle">
+                <div id="textTitleContainer">
+                    <span id="textTitle">CCMessagerie</span>
+                </div>
+            </div>
+            <div id="iconsContainer">
+                <div id="icons">
+                    <img src="../icons/refresh.png" alt="" class="actionIcons" />
+                    <img src="../icons/minimize.png" alt="" class="actionIcons" />
+                    <img src="../icons/close.png" alt="" class="actionIcons" />
+                </div>
+            </div>
+        </div>
+        <div id="bodyC">
+            <div id="clientSection">
+                <div class="clientToolsContainer">
+                    <div id="clientAvatar"></div>
+                </div>
+                <div class="clientToolsContainer">
+                    <img src="../icons/userMenu.png" alt="" class="clientSettings">
+                </div>
+                <div class="clientToolsContainer">
+                    <img src="../icons/comptable.png" alt="" class="clientSettings">
+                </div>
+                <div class="clientToolsContainer">
+                    <img src="../icons/lock.png" alt="" class="clientSettings">
+                </div>
+            </div>
+            <div id="infosHolder">
+                <div id="userDataContainer"></div>
+            </div>
+            <div id="chatSection">
+                <div id="msgArea"></div>
+                <div id="msgInputField">
+                    <input type="text" id="msgInput" placeholder="Type message here..." />
+                    <div id="msgButtonsHolder">
+                        <img src="../icons/send.png" alt="" class="msgButtons" id="btnSendMsg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

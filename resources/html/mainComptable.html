@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/styleComptable.css">
+    <link rel="stylesheet" type="text/css" href="../css/chatStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/colors.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/model/chatDB.js"></script>
+    <script src="../js/controllers/comptableWindow.js"></script>
+    <script src="../js/model/comptableDB.js"></script>
+    <script src="../js/view/comptable.js"></script>
+    <script src="../js/controllers/chatController.js"></script>
+    <script src="../js/view/chatDisplay.js"></script>
+    <script src="../js/validation/validation.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="navBar">
+		<i></i>
+            <!--<img src="../icons/client_Window.png" alt="" onclick="createClient()"
+                style="cursor: pointer;-webkit-app-region: no-drag;margin: auto 5px" />-->
+            <div id="windowTitle">
+                <!-- <img src="../icons/logo.png" alt=""> -->
+                <div id="textTitleContainer">
+                    <span id="textTitle">CCMessagerie</span>
+                </div>
+            </div>
+            <div id="iconsContainer">
+                <div id="icons">
+                    <img src="../icons/refresh.png" alt="" class="actionIcons" />
+                    <img src="../icons/minimize.png" alt="" class="actionIcons" />
+                    <img src="../icons/close.png" alt="" class="actionIcons" />
+                </div>
+            </div>
+        </div>
+        <div id="bodyC">
+            <div id="comptableSection">
+                <div class="comptableToolsContainer">
+                    <div id="comptableAvatar"></div>
+                </div>
+                <div class="comptableToolsContainer">
+                    <img src="../icons/edit.png" alt="" class="comptableSettings" id="settingsOnClick">
+                </div>
+            </div>
+            <div id="clientsSection">
+                <div id="utils">
+                    <div id="searchPanel">
+                        <img src="../icons/search.png" alt="" id="searchIcon" />
+                        <input type="text" id="searchInput" placeholder="Search clients here..." />
+                    </div>
+                    <img src="../icons/addClient.png" alt="" id="addClient">
+                </div>
+                <div id="clientsList">
+                    <!--  -->
+                </div>
+            </div>
+            <div id="chatSection">
+                <div id="leftArea">
+                    <div id="msgArea"></div>
+                    <div id="msgInputField">
+                        <input type="text" id="msgInput" placeholder="Type message here..." autofocus />
+                        <div id="msgButtonsHolder">
+                            <div id="upFilePreviewContainer">
+                                <label id="upFilePreview"></label>
+                            </div>
+                            <input type="file" class="msgButtons" id="upFile" />
+                            <label style="background-image:url('../icons/attach.png')" class="msgButtons" for="upFile"
+                                id="btnForUpFile"></label>
+                            <img src="../icons/send.png" alt="" class="msgButtons" id="btnSendMsg" />
+                            <i></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="rightArea">
+                    <div id="clientBasicInfosHolder">
+                        <div
+                            style="height:30px;display:grid;grid-template-columns:auto max-content;grid-template-rows: 30px;">
+                            <div
+                                style="grid-column-start: 2;display: grid;grid-template-columns: 30px 30px;grid-column-gap: 4px;padding-top: 2px;padding-right: 2px;">
+                                <div class="clientBtnContainer"><img src="../icons/delete.png" alt=""
+                                        id="deleteClient" />
+                                </div>
+                                <div class="clientBtnContainer"><img src="../icons/editUser.png" alt=""
+                                        id="modifyClient"></div>
+                            </div>
+                        </div>
+                        <div id="clientBasicInfos">
+                            <div id="clientBigImage"></div>
+                            <div id="basicInfosHolder">
+                                <span class="infoTitle" style="display:none">Nom Client :</span>
+                                <span id="nomClient">text text</span>
+                                <span class="infoTitle" style="display:none">Prenom Client :</span>
+                                <span id="prenomClient">text text</span>
+                                <span class="infoTitle" style="display:none">Telephone Client :</span>
+                                <span id="telClient">0605040102</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="clientIndepthInfos">
+                        <div class="IndepthInfosHolder">
+                            <span class="infoTitle">EMail :</span>
+                            <span class="infoText">text text</span>
+                        </div>
+                        <div class="IndepthInfosHolder">
+                            <span class="infoTitle">Fax :</span>
+                            <span class="infoText">0504010203</span>
+                        </div>
+                        <div class="IndepthInfosHolder">
+                            <span class="infoTitle">Cin :</span>
+                            <span class="infoText">text text</span>
+                        </div>
+                        <div class="IndepthInfosHolder">
+                            <span class="infoTitle">Raison Sociale :</span>
+                            <span class="infoText">text text</span>
+                        </div>
+                        <div class="IndepthInfosHolder">
+                            <span class="infoTitle">Forme Juridique :</span>
+                            <span class="infoText">text</span>
+                        </div>
+                        <div class="IndepthInfosHolder">
+                            <span class="infoTitle">Adresse :</span>
+                            <span class="infoText">text text</span>
+                        </div>
+                        <div class="IndepthInfosHolder">
+                            <span class="infoTitle">Identifiant Client :</span>
+                            <span class="infoText">text text</span>
+                        </div>
+                        <div class="IndepthInfosHolder">
+                            <span class="infoTitle">Pass :</span>
+                            <span class="infoText">text text</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div id="addClientContainer" class="absoluteContainer">
+                <div id="addClientForm" class="acForm">
+                    <div class="addCLientInputHolder">
+                        <span class="addClientInputTitle absoluteFormsTitles">Nom Client :</span>
+                        <input type="text" class="addClientInput absoluteFormsInputs" autofocus />
+                    </div>
+                    <div class="addCLientInputHolder">
+                        <span class="addClientInputTitle absoluteFormsTitles">Prenom Client :</span>
+                        <input type="text" class="addClientInput absoluteFormsInputs" />
+                    </div>
+                    <div class="addCLientInputHolder">
+                        <span class="addClientInputTitle absoluteFormsTitles">Cin Client :</span>
+                        <input type="text" class="addClientInput absoluteFormsInputs" />
+                    </div>
+                    <div class="addCLientInputHolder">
+                        <span class="addClientInputTitle absoluteFormsTitles">EMail Client :</span>
+                        <input type="text" class="addClientInput absoluteFormsInputs" />
+                    </div>
+                    <div class="addCLientInputHolder">
+                        <span class="addClientInputTitle absoluteFormsTitles">Telephone Client :</span>
+                        <input type="text" class="addClientInput absoluteFormsInputs" />
+                    </div>
+                    <div class="addCLientInputHolder">
+                        <span class="addClientInputTitle absoluteFormsTitles">Fax Client :</span>
+                        <input type="text" class="addClientInput absoluteFormsInputs" />
+                    </div>
+                    <div class="addCLientInputHolder">
+                        <span class="addClientInputTitle absoluteFormsTitles">Raison Sociale :</span>
+                        <input type="text" class="addClientInput absoluteFormsInputs" />
+                    </div>
+                    <div class="addCLientInputHolder">
+                        <span class="addClientInputTitle absoluteFormsTitles">Forme Juridique :</span>
+                        <input type="text" class="addClientInput absoluteFormsInputs" />
+                    </div>
+                    <div class="addCLientInputHolder">
+                        <span class="addClientInputTitle absoluteFormsTitles">Adresse Client :</span>
+                        <input type="text" class="addClientInput absoluteFormsInputs" />
+                    </div>
+                    <div class="addCLientInputHolder">
+                        <span class="addClientInputTitle absoluteFormsTitles">Identifiant Client :</span>
+                        <input type="text" class="addClientInput absoluteFormsInputs" />
+                    </div>
+                    <div class="addCLientInputHolder">
+                        <span class="addClientInputTitle absoluteFormsTitles">Mot de pass Client :</span>
+                        <input type="text" class="addClientInput absoluteFormsInputs" />
+                    </div>
+                    <div id="addClientBtnsHolder">
+                        <input type="button" value="Ajouter" class="addClientBtn absoluteFormsBtns">
+                        <input type="button" value="Anuller" class="addClientBtn absoluteFormsBtns">
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div id="settingsContainer" class="absoluteContainer">
+                <div id="settingsForm" class="acForm">
+                    <div id="updateComptableAvatar">
+                        <div id="comptableImageContainer"></div>
+                        <div id="updateComptableImage">
+                            <label for="ucUploadImage" class="inputFileLabel absoluteFormsBtns">Upload Image</label>
+                            <input type="file" name="" id="ucUploadImage" />
+                            <input type="button" value="Change" id="ucChangeImage" class="absoluteFormsBtns">
+                        </div>
+                    </div>
+                    <div id="ucSeperator"></div>
+                    <div id="ucInputs">
+                        <div class="ucHolder">
+                            <span class="ucTitle absoluteFormsTitles">Telephone :</span>
+                            <input type="text" class="ucInput absoluteFormsInputs" />
+                        </div>
+                        <div class="ucHolder">
+                            <span class="ucTitle absoluteFormsTitles">Fax :</span>
+                            <input type="text" class="ucInput absoluteFormsInputs" />
+                        </div>
+                        <div class="ucHolder">
+                            <span class="ucTitle absoluteFormsTitles">EMail :</span>
+                            <input type="text" class="ucInput absoluteFormsInputs" />
+                        </div>
+                        <div class="ucHolder">
+                            <span class="ucTitle absoluteFormsTitles">Adresse :</span>
+                            <input type="text" class="ucInput absoluteFormsInputs" />
+                        </div>
+                        <div class="ucHolder">
+                            <span class="ucTitle absoluteFormsTitles">Identifiant :</span>
+                            <input type="text" class="ucInput absoluteFormsInputs" />
+                        </div>
+                        <div class="ucHolder">
+                            <span class="ucTitle absoluteFormsTitles">Mot de pass :</span>
+                            <input type="text" class="ucInput absoluteFormsInputs" />
+                        </div>
+                        <div id="ucBtnsHolder">
+                            <i></i>
+                            <input type="button" value="Valider" class="ucBtns absoluteFormsBtns">
+                            <input type="button" value="Anuller" class="ucBtns absoluteFormsBtns">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div id="updateClientImageContainer" class="absoluteContainer">
+                <div id="uciForm" class="acForm">
+                    <!-- <div id="uci"> -->
+                    <div id="uciImage"></div>
+                    <div style="display:grid;grid-column-start: 3;grid-row-start: 2;">
+                        <label for="uciInput" class="uciInputFileLabel absoluteFormsBtns">Upload Image</label>
+                        <input type="file" name="" id="uciInput" />
+                    </div>
+                    <div id="uciBtns">
+                        <input type="button" value="valider" class="uciButton absoluteFormsBtns">
+                        <input type="button" value="anuller" class="uciButton absoluteFormsBtns">
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+            <!--  -->
+            <div id="confirmAction" class="absoluteContainer">
+                <div id="caForm" class="acForm">
+                    <h3>Êtes-vous sûr de vouloir effectuer cette action ?</h3>
+                    <div id="uciBtns">
+                        <input type="button" value="valider" class="caButton absoluteFormsBtns">
+                        <input type="button" value="anuller" class="caButton absoluteFormsBtns">
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
